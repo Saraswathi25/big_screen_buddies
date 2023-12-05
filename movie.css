@@ -1,0 +1,43 @@
+main{
+  background-color: #0A0B0D;
+}
+h2,p{
+    color: white;
+}
+span{
+    color:#ccc
+}
+.heading{
+    padding: 3%;
+}
+#movieDetails{
+  
+    padding-top: 4%;
+    padding-left: 15%;
+}
+#movie_info{
+    display: flex;
+}
+hr{
+    margin: 0 3%;
+}
+.details{
+    padding-left: 5%;
+}
+.description{
+    padding-top: 2%;
+    width:80%;
+}
+.movie_image{
+
+height:300px;
+object-fit: contain;
+}
+.showtime_button{
+    padding:10px;
+    color:white;
+    background-color: #004CCC;
+    border: #004CCC;
+    margin: 5px;
+    border-radius: 5px;
+}

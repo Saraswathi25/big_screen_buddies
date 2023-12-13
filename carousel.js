@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add other movie details here.
     
         movieCard.appendChild(movieInfo);
-        moviesContainer.appendChild(movieCard);
+        movies_Container.appendChild(movieCard);
       }
     }
 });

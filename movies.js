@@ -87,7 +87,27 @@ const movie_data = {
       showtime:["9:30 am","6:00pm"]
   },
 };
- 
+const moviesContainer = document.getElementById("movies_container");
+for (const movieKey in movie_data) {
+  if (Object.hasOwnProperty.call(movie_data, movieKey)) {
+    const movie = movie_data[movieKey];
+
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("movie-card");
+
+    const image = document.createElement("img");
+    image.src = movie.image_link; // Assuming you have an image_link property in your movie data
+    movieCard.appendChild(image);
+
+    const movieInfo = document.createElement("div");
+    movieInfo.classList.add("movie-info");
+    movieInfo.innerHTML = `<h2 class="movie_name">${movie.name}</h2>`;
+    // Add other movie details here.
+
+    movieCard.appendChild(movieInfo);
+    movies_Container.appendChild(movieCard);
+  }
+}
 
   const movieData = getMovieData("movie2");
   displayData(movieData);

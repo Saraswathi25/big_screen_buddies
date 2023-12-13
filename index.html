@@ -3,47 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="movie.css">
     <title>Movie Booking System</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-
         header {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 10px;
-        }
-
-        #movies-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .movie-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            overflow: hidden;
-            width: 300px;
-        }
-
-        .movie-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .movie-card .movie-info {
-            padding: 10px;
-        }
+        }        
 
         footer {
             background-color: #333;
@@ -56,54 +24,103 @@
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Movie Booking System</h1>
-    </header>
+<body> 
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <img src="logo.jpeg" alt="logo" style="height: 80px;">
+        <a href="#">Big Screen Buddies</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="index.html">Content</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login/Registration</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <div id="movies-container">
-        <!-- Movie Cards will be dynamically added here using JavaScript -->
+  <div class="carousel">
+    <button class="prev-btn" onclick="prevImage()">❮</button>
+    
+    <div class="carousel-item">
+        <img src="assets/acqua.webp" alt="Residential Cleaning">
+        <h2>Residential Cleaning</h2>
+        <p class="hidden-text">jQuery is a library of the JavaScript functions 
+            that you're most likely to need as you develop websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti adipisci mollitia cumque. Soluta possimus delectus pariatur, aut veniam adipisci ex corporis accusantium dolore? Iusto eligendi exercitationem quibusdam ipsam esse unde!</p>
     </div>
 
-    <footer>
+    <div class="carousel-item">
+        <img src="assets/chair-office.png" alt="Commercial Cleaning">
+        <h2>Commercial Cleaning</h2>
+        <p class="hidden-text">jQuery is a library of the JavaScript functions 
+            that you're most likely to need as you develop websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti adipisci mollitia cumque. Soluta possimus delectus pariatur, aut veniam adipisci ex corporis accusantium dolore? Iusto eligendi exercitationem quibusdam ipsam esse unde!</p>
+    </div>
+
+    <div class="carousel-item">
+        <img src="assets/godzila.webp" alt="Carpet Cleaning">
+        <h2>Carpet Cleaning</h2>
+        <p class="hidden-text">jQuery is a library of the JavaScript functions 
+            that you're most likely to need as you develop websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti adipisci mollitia cumque. Soluta possimus delectus pariatur, aut veniam adipisci ex corporis accusantium dolore? Iusto eligendi exercitationem quibusdam ipsam esse unde!</p>
+    </div>
+
+    <div class="carousel-item">
+        <img src="assets/migration.webp" alt="Window Cleaning">
+        <h2>Window Cleaning</h2>
+        <p class="hidden-text">jQuery is a library of the JavaScript functions 
+            that you're most likely to need as you develop websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti adipisci mollitia cumque. Soluta possimus delectus pariatur, aut veniam adipisci ex corporis accusantium dolore? Iusto eligendi exercitationem quibusdam ipsam esse unde!</p>
+    </div>
+
+    <div class="carousel-item">
+        <img src="assets/movie_1.jpg" alt="Deep Cleaning">
+        <h2>Deep Cleaning</h2>
+        <p class="hidden-text">jQuery is a library of the JavaScript functions 
+            that you're most likely to need as you develop websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti adipisci mollitia cumque. Soluta possimus delectus pariatur, aut veniam adipisci ex corporis accusantium dolore? Iusto eligendi exercitationem quibusdam ipsam esse unde!</p>
+    </div>
+
+    <button class="next-btn" onclick="nextImage()">❯</button>
+</div>
+
+  <div id="movies_Container">
+        <!-- Movie Cards will be dynamically added here using JavaScript -->
+  </div>
+
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+  
+      </ul>
         <p>&copy; 2023 Movie Booking System</p>
     </footer>
-
-    <script>
-        // You can use JavaScript to dynamically fetch and display movies here.
-        // For simplicity, let's assume you have an array of movie objects.
-
-        const movies = [
-            {
-                title: "Movie 1",
-                image: "https://via.placeholder.com/300x200",
-                // Add other movie details like genre, release date, etc.
-            },
-            {
-                title: "Movie 2",
-                image: "https://via.placeholder.com/300x200",
-            },
-            // Add more movies as needed.
-        ];
-
-        const moviesContainer = document.getElementById("movies-container");
-
-        movies.forEach(movie => {
-            const movieCard = document.createElement("div");
-            movieCard.classList.add("movie-card");
-
-            const image = document.createElement("img");
-            image.src = movie.image;
-            movieCard.appendChild(image);
-
-            const movieInfo = document.createElement("div");
-            movieInfo.classList.add("movie-info");
-            movieInfo.innerHTML = `<h2>${movie.title}</h2>`;
-            // Add other movie details here.
-
-            movieCard.appendChild(movieInfo);
-            moviesContainer.appendChild(movieCard);
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="movies.js"></script>
+    <script src="carousel.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

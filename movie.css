@@ -12,6 +12,62 @@ span{
 }
 .heading{
     padding: 3%;
+    display: flex;
+    align-items: center;
+}
+.heading div{
+  flex:1
+}
+#date{
+  background: black;
+    color: blue;
+    padding: 2% 10%;
+    border: 1px solid blue;
+    border-radius: 7px;
+    margin-left: 5%;
+}
+.dateDiv{
+  text-align: end;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  z-index: 999;
+}
+.overlay-content {
+  background-color: white;
+  margin: auto;
+  width: 35%;
+  height: 30%;
+  border-radius: 25px;
+}
+.close-overlay {
+  position: relative;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+  color: black;
+  float: right;
+}
+.dateImg {
+  width: 33%;
+}
+.overlay-text {
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  margin:0
 }
 #movieDetails{
   
@@ -154,6 +210,9 @@ margin: 2px;
 #back{
     color: white;
     padding-left: 5%;
+}
+.date-label{
+  color: white;
 }
 
 @media  (max-width:768px) {

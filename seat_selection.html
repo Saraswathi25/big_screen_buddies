@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seat Selection</title>
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="movie.css" />
+</head>
+<body>
+<main class="main-seat-selection">
+  <i class="fa fa-chevron-left"  id="back" aria-hidden="true"></i>
+  <h2 class="movie-seat-heading">Seat Preview</h2>
+<hr>
+  <div id="selected-seats"></div>
+
+  <div id="seat-map">
+
+  </div>
+  <div id="screen"><p>SCREEN</p></div>
+  <hr>
+  <div class="payment-footer">
+    <div class="clockIconTime">
+    <i class="fa-solid fa-clock clockIcon"></i>:
+  <div id="displayShowTime"></div>
+</div>
+<div class="clockIconTime">
+  <i class="fas fa-map-marker-alt"></i>
+<div id="displayShowTime">Brantford</div>
+</div>
+<div class="clockIconTime">
+  <i class="blocked fas fa-chair "></i>
+<div id="displayShowTime">Occupied</div>
+</div>
+<div class="clockIconTime">
+  <i class="fas fa-chair"></i>
+<div id="displayShowTime">Standard</div>
+</div>
+    <button class="showtime_button payment" >BUY TICKETS</button>
+  </div>
+
+</main>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="movies.js"></script>
+</body>
+</html>

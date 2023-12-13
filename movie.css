@@ -1,3 +1,6 @@
+*{
+  font-family: MarkOT, sans-serif, sans-serif;
+}
 main{
   background-color: #0A0B0D;
 }
@@ -19,7 +22,7 @@ span{
     display: flex;
 }
 hr{
-    margin: 0 3%;
+    margin: 2% 3%;
 }
 .details{
     padding-left: 5%;
@@ -40,4 +43,142 @@ object-fit: contain;
     border: #004CCC;
     margin: 5px;
     border-radius: 5px;
+   
+    FONT-WEIGHT: 700;
+}
+.row {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  #seat-map{
+    width: 60%;
+  margin: auto;
+  border: 2px solid #004CCC;
+  padding: 2%;
+  margin-top: 1%;
+  }
+  .movie-seat-heading{
+    text-align: center;
+    display: inline-block;
+    padding-left: 39%;
+  }
+  .blocked .seat{
+    border: 1px solid grey;
+  }
+  .seat {
+    width: 5%;
+    height: 50px;
+    margin-right: 10px;
+    background-color: black;
+    border: 1px solid #004CCC;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.payment{
+    padding: 20px 80px;
+    float: right;
+}
+  .selected {
+    background-color: #004CCC;
+    color: #fff;
+  }
+  .selected .fas{
+    color:white
+}
+.selected .seat-number{
+    color: white;
+}
+  .gap {
+    width: 30px;
+  }
+.blocked .fas, .blocked .seat-number,.clockIconTime .blocked{
+  color: grey;
+}
+  #selected-seats {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+  }
+  #screen{
+    border: 2px solid #004CCC;
+  margin-top: 2%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clockIcon{
+    color: #004CCC;
+    padding: 1%;
+}
+.fas{
+    color:#004CCC
+}
+#screen p{
+text-align: center;
+margin: 2px;
+}
+.main-seat-selection{
+    padding: 2%;
+    height: 1050px;
+
+}
+#displayShowTime{
+    color:white;
+    display: inline;
+    padding: 1%;
+    
+}
+.clockIconTime{
+    color: white;
+    flex: 1;
+ 
+}
+.seat-number{
+    margin: 10px 0 0 0;
+    font-size: 7px;
+    text-align: center;
+    color: blue; 
+}
+.payment-footer{
+    display: flex;
+    width:70%;
+    margin: auto;
+    margin-top: 4%;
+    align-items: center;
+    text-align: center;
+}
+#back{
+    color: white;
+    padding-left: 5%;
+}
+
+@media  (max-width:768px) {
+  #movie_info {
+    flex-direction: column;
+  }
+  .seat {
+    width: 6%;
+  
+    margin-right: 6px;
+  }
+  #seat-map {
+    width: 76%;
+    margin: auto;
+    border: 0;
+   
+}
+.movie-seat-heading {
+  padding-left: 26%;
+  font-size: 13px;
+}
+.payment-footer {
+  flex-direction: column;
+}
+.clockIconTime {
+  margin-bottom: 10px;
+}
 }

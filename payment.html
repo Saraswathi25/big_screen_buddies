@@ -93,7 +93,6 @@
     <header>
         <h1>Your Header Content Here</h1>
     </header>
-
    
     <main>
         <h2 class="payment-options-heading">Choose a Payment Option</h2>
@@ -167,12 +166,10 @@
                 let contentDiv = document.createElement("div");
                 contentDiv.id = contentId;
                 contentDiv.classList.add("accordion-content");
-
-                // Static email and mobile number
+                
                 contentDiv.innerHTML += "<p>Email: example@example.com</p>";
                 contentDiv.innerHTML += "<p>Mobile Number: +1 123-456-7890</p>";
 
-                // Reference ID input field
                 contentDiv.appendChild(createFormField("Reference ID (10 digits)", "text", "referenceId"));
 
                 let submitButton = document.createElement("button");
@@ -211,7 +208,7 @@
             };
 
             let validateForm = (contentId) => {
-                let firstInvalidField = null; // Keep track of the first input field with a validation error
+                let firstInvalidField = null; 
                 let cardNumberField = $("#" + contentId + " #cardNumber");
                 let expirationDateField = $("#" + contentId + " #expirationDate");
                 let cvvField = $("#" + contentId + " #cvv");
@@ -223,7 +220,7 @@
                 let errorMessage = "";
                 let isValid = true;
 
-                // Simple validations (you may want to enhance these based on your requirements)
+                
                 if (!/^\d{16}$/.test(cardNumber)) {
                     errorMessage += "Invalid card number.\n";
                     isValid = false;
@@ -263,7 +260,6 @@
                 // Display error message in alert box
                 if (!isValid) {
                     alert("Oops!\n" + errorMessage);
-                    // Set focus to the first input field with a validation error
                     if (firstInvalidField) {
                         firstInvalidField.focus();
                     }
@@ -296,21 +292,19 @@
                 // Display error message in alert box
                 if (!isValid) {
                     alert("Validation Error:\n" + errorMessage);
-                    // Set focus to the first input field with a validation error
+                   
                     if (firstInvalidField) {
                         firstInvalidField.focus();
                     }
                 } else {
-                    // Display success message in alert box
+                  
                     alert("Payment Successfully Completed !!");
-
-                    // Show QR code modal
                     showQRCodeModal();
                 }
             };
 
             let showQRCodeModal = () => {
-                // Create a modal
+               
                 let modalContent = `
                     <div class="modal" id="qrCodeModal">
                         <div class="modal-dialog">
@@ -330,46 +324,37 @@
                         </div>
                     </div>
                 `;
-
-                // Append the modal to the body
+                
                 $("body").append(modalContent);
-
-                // Generate QR code
+               
                 let qrCodeContent = "Your QR Code Content";  
                 let qrCode = new QRCode(document.getElementById("qrCodeContainer"), {
                     text: qrCodeContent,
                     width: 128,
                     height: 128
                 });
-
-                // Show the modal
+            
                 $("#qrCodeModal").modal("show");
 
-                // Redirect button click event
-                $("#redirectButton").on("click", function () {
-                    // Add the redirect logic here
+                $("#redirectButton").on("click", function () 
                     window.location.href = "index.html";
-                    // Close the modal
+        
                     $("#qrCodeModal").modal("hide");
                 });
 
-                // Remove the modal from the DOM when it's hidden
                 $("#qrCodeModal").on("hidden.bs.modal", function () {
                     $(this).remove();
                 });
             };
-
-            // Call createAccordion after the fade-in animation
+        
             $(document).ready(() => {
                 createAccordion();
             });
         </script>
 
-        <!-- Container for Payment Accordion -->
         <div id="paymentContainer"></div>
     </main>
 
-    <!-- Footer Placeholder -->
     <footer>
         <p>Your Footer Content Here</p>
     </footer>

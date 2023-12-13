@@ -10,10 +10,21 @@
 
     <main>
         <div class="heading">
-        <h2>Big Screen Cinemas Brantford</h2>
-    
+          <div>
+            <h2>Big Screen Cinemas Brantford</h2> 
             <span>Brantford, ON</span>
-
+          </div>
+          <div class="dateDiv">
+            <label for="date" class="date-label">Select Date : </label>
+            <input type="date" id="date" name="date">
+          </div>
+        </div>
+        <div id="overlay">
+          <div class="overlay-content">
+            <span class="close-overlay">&times;</span>
+            <img src="assets/date.gif" class="dateImg" />
+            <p class="overlay-text">Please Select Date</p>
+          </div>
         </div>
    <hr>
         <div id="movieDetails"></div>

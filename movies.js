@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  var selectedDate;
 
   // Get the topic from the URL
 //   const urlParams = new URLSearchParams(window.location.search);
@@ -26,20 +26,70 @@ const movie_data = {
   },
   movie2: {
     id: 2,
-    name: "Inception",
+    name: "Godzilla Minus One (Japanese w/e.s.t.)",
+    type:"Action, Adventure",
     description:
-      "A mind-bending science fiction thriller about dream infiltration and manipulation.",
-    showtime: "2h 37min",
-    seats: {
-      total: 100,
-      available: 75,
-      reserved: 25,
-    }
-  }
+      "Japan, devastated after the war, faces a new threat in the form of Godzilla. How will the   country confront this impossible situation?",
+   
+      duration: "2h 37min",
+      seats: {
+        total: 100,
+        available: 75,
+        reserved: 25,
+      },
+      image_link:"assets/godzila.webp",
+      showtime:["9:30 am","6:00pm"]
+  },
+  movie3: {
+    id: 3,
+    name: "The Boys in the Boat",
+    type:"Action, Adventure",
+    description:
+      "THE BOYS IN THE BOAT is a sports drama based on the #1 New York Times bestselling non-fiction novel written by Daniel James Brown. The film, directed by George Clooney, is about the 1936 University of Washington rowing team that competed for gold at the Summer Olympics in Berlin. This inspirational true story follows a group of underdogs at the height of the Great Depression as they are thrust into the spotlight and take on elite rivals from around the world.",
+      duration: "2h 37min",
+      seats: {
+        total: 100,
+        available: 75,
+        reserved: 25,
+      },
+      image_link:"assets/movie_2",
+      showtime:["9:30 am","6:00pm"]
+  },
+  movie4: {
+    id: 4,
+    name: "Aquaman And The Lost Kingdom",
+    type:"Action, Adventure, Sequel, Adaptation",
+    description:
+      "Action Adventure. When an ancient power is unleashed, Aquaman must forge an uneasy alliance with an unlikely ally to protect Atlantis, and the world, from irreversible devastation.",
+
+      duration: "2h 37min",
+      seats: {
+        total: 140,
+        available: 75,
+        reserved: 25,
+      },
+      image_link:"assets/acqua.webp",
+      showtime:["9:30 am","6:00pm","10:00pm"]
+  },
+  movie5: {
+    id: 5,
+    name: "Migration",
+    type:"Action, Animation, Comedy",
+    description:
+      "This holiday season, Illumination, creators of the blockbuster Minions, Despicable Me, Sing and The Secret Life of Pets comedies, invites you to take flight into the thrill of the unknown with a funny, feathered family vacation like no other in the action-packed new original comedy, Migration.",
+      duration: "2h 37min",
+      seats: {
+        total: 100,
+        available: 75,
+        reserved: 25,
+      },
+      image_link:"assets/migration.webp",
+      showtime:["9:30 am","6:00pm"]
+  },
 };
  
 
-  const movieData = getMovieData("movie1");
+  const movieData = getMovieData("movie2");
   displayData(movieData);
 
  function displayShowTimes(showtime){
@@ -72,10 +122,18 @@ const movie_data = {
         $("#movieDetails").append(movieHTML);
  
 }
-
+$(".close-overlay").click(() => {
+  $("#overlay").hide();
+ 
+});
+$('#date').on('change', function() {
+  // Retrieve the value of the date input
+  selectedDate = $(this).val();
+});
 $("#movieDetails").on("click", ".showtime_button", function() {
   // Get the value of the clicked showtime
   // let isloggedIn = localStorage.getItem("isloggedIn");
+  if(selectedDate){
   // if(isloggedIn)
   // {
     let clickedShowtime = $(this).text();
@@ -84,6 +142,10 @@ $("#movieDetails").on("click", ".showtime_button", function() {
 // else{
 //   window.location.href = "login.html";
 // }
+  }
+else{
+  $("#overlay").show();
+}
 });
 
 const urlParamsSeatSelection= new URLSearchParams(window.location.search);

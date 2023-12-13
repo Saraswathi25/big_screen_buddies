@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="right-section form">
+        <div class="title">
+          <span class="first-title">Title</span>
+          <span class="describe">Login</span>
+        </div>
+        <form action="" id="login_form" method="post">
+          <div class="input-wrapper">
+            <input type="text" id="email" name="email" placeholder=" " />
+            <label for="email">Email</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="password" id="password" name="password" placeholder=" " />
+            <label for="password">Password</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <a href="#" class="remember-password">
+              Forgot your username or password?
+            </a>
+          </div>
+          <input type="submit" class="btn" value="Login" />
+        </form>
+        <div class="footer">
+          <div class="isAccount">
+            <span>&nbsp;&nbsp;Don't have an account?</span>
+          </div>
+          <a href="#" class="btn create-account">Create an account</a>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/validationLogin.js"></script>
+    <script src="./js/login.js"></script>
+ 
+  </body>
+</html>

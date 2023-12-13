@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+   
+  </head>
+  <body>
+    <div class="container">
+      <div class="right-section form">
+        <div class="title">
+          <span class="describe">Create a New Account</span>
+        </div>
+        <form action="" id="register_form" method="post">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="firstName"
+              name="first_name"
+              placeholder=" "
+            />
+            <label for="firstName">First Name</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="lastName" name="last_name" placeholder=" " />
+            <label for="lastName">Last Name</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="username" name="username" placeholder=" " />
+            <label for="username">Username</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="password" name="password" placeholder=" " />
+            <label for="password">Password</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="email" name="email" placeholder=" " />
+            <label for="email">Email</label>
+            <div class="error"></div>
+          </div>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="phoneNumber"
+              name="phone_number"
+              placeholder=" "
+            />
+            <label for="phoneNumber">Phone Number</label>
+            <div class="error"></div>
+          </div>
+          <input type="submit" class="btn" value="Register" />
+        </form>
+        <div class="footer">
+          <div class="isAccount">
+            <span> &nbsp; &nbsp;Already have an account?</span>
+          </div>
+          <a href="#" class="btn create-account">Log In</a>
+        </div>
+      </div>
+      
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/validationRegister.js"></script>
+    <script src="./js/register.js"></script>
+    
+  </body>
+</html>

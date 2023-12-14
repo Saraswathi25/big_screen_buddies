@@ -52,6 +52,12 @@ span{
   padding-top: 10%;
   z-index: 999;
 }
+#total-cost{
+  color: white;
+    float: right;
+    position: relative;
+    right: 4%;
+}
 .overlay-content {
   background-color: white;
   margin: auto;

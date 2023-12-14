@@ -64,6 +64,7 @@ span{
   width: 35%;
   height: 30%;
   border-radius: 25px;
+  padding:2%;
 }
 .close-overlay {
   position: relative;
@@ -75,6 +76,9 @@ span{
 }
 .dateImg {
   width: 33%;
+}
+.seatAlert{
+  width:25%;
 }
 .overlay-text {
   color: black;

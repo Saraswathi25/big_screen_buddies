@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const carousel = document.querySelector('.carousel');
   const items = carousel.querySelectorAll('.carousel-item');
@@ -97,7 +99,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     $("#logout").click(()=>{
-        localStorage.clear();
+       // let keepKey =localStorage.getItem("userInfo")
+       clearLocalStorageExceptOne("userInfo");
+        function clearLocalStorageExceptOne(keepKey) {
+            for (var key in localStorage) {
+              if (localStorage.hasOwnProperty(key) && key !== keepKey) {
+                localStorage.removeItem(key);
+              }
+            }
+          }
+   
     })
+
+  
 });
 

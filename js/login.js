@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
   if (errorInputs.length === 0) {
     let emailValue = emailEL.value;
     let passwordValue = passwordEl.value.trim();
-    const userInfo = JSON.parse(window.localStorage.getItem(emailValue));
+    const userInfo = JSON.parse(window.localStorage.getItem("userInfo"));
     if(userInfo == null){
       alert("Please Enter Valid Email")
       location.replace("login.html");

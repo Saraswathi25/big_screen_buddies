@@ -21,7 +21,7 @@ form.addEventListener("submit", (e) => {
       phoneNumber,
     };
 
-    window.localStorage.setItem(email, JSON.stringify(userInformation));
+    window.localStorage.setItem("userInfo", JSON.stringify(userInformation));
 
     location.replace("login.html");
   }

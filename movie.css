@@ -287,6 +287,11 @@ nav .menu-nac {
   font-weight: 600;
   padding-left: 25px;
 }
+
+.carousel-item h2{
+  text-align: center;
+}
+
 .menu ul {
   display: inline-flex;
 }

@@ -8,14 +8,15 @@ $(document).ready(function () {
   $('#date').attr('min', today);
 
   // Get the topic from the URL
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const id = urlParams.get("id"); // "default" or a default topic if none selected
-const getMovieData=(movie1)=> {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("clickedMovieId"); // "default" or a default topic if none selected
+  
+const getMovieData=(id)=> {
    
-  return movie_data[movie1]
+  return movie_data[id]
 }
  
-const movieData = getMovieData("movie2");
+const movieData = getMovieData(id);
   displayData(movieData);
  
   
@@ -29,23 +30,28 @@ const movieData = getMovieData("movie2");
 }
 
   function displayData(movieData) {  
-  
-            const movieHTML = `
-            <div id="movie_info">
-            <div>
-            <img src="${movieData.image_link}" class="movie_image">
-            </div>
-            <div class="details">
-            <h2>${movieData.name}</h2>
-            <p>${movieData.type}</p>
-            <p>Showtime: ${movieData.duration}</p>
-           <div id="showTimeDiv"> ${displayShowTimes(movieData.showtime)}</div>
-    </div>
-    </div>
-    <p class="description">${movieData.description}</p>
+    let path = window.location.pathname;
+ path = path.split("/").pop();
+    if(path=="movie_details.html")
+    {
+      const movieHTML = `
+      <div id="movie_info">
+      <div>
+      <img src="${movieData.image_link}" class="movie_image">
+      </div>
+      <div class="details">
+      <h2>${movieData.name}</h2>
+      <p>${movieData.type}</p>
+      <p>Showtime: ${movieData.duration}</p>
+     <div id="showTimeDiv"> ${displayShowTimes(movieData.showtime)}</div>
+</div>
+</div>
+<p class="description">${movieData.description}</p>
+
+      `;
+  $("#movieDetails").append(movieHTML);
+    }
     
-            `;
-        $("#movieDetails").append(movieHTML);
  
 }
 $(".close-overlay").click(() => {
@@ -55,7 +61,7 @@ $(".close-overlay").click(() => {
 $('#date').on('change', function() {
   // Retrieve the value of the date input
   selectedDate = $(this).val();
-  selectedDate = selectedDate.toISOString().split('T')[0];
+ // selectedDate = selectedDate.toISOString().split('T')[0];
 });
 $("#movieDetails").on("click", ".showtime_button", function() {
   // Get the value of the clicked showtime
@@ -67,7 +73,7 @@ $("#movieDetails").on("click", ".showtime_button", function() {
   if(isLoggedIn == "true")
    {
    
-    window.location.href = "seat_selection.html?time=" + clickedShowtime;
+    window.location.href = "seat_selection.html?time=" + clickedShowtime +"&clickedMovieId="+id;
   } else{
    window.location.href = "login.html?time=" + clickedShowtime;
 }
@@ -158,7 +164,7 @@ const urlParamsSeatSelection= new URLSearchParams(window.location.search);
 $("#back").click(()=>{
   let date = localStorage.getItem('date');
   //$("#date").text(date)
-  window.location.href = "movie_details.html";
+  window.location.href = "movie_details.html?clickedMovieId="+id;
 })
 
 $("#buy").click(()=>{

@@ -215,5 +215,76 @@ var movie_data = {
       },
       "image_link":"assets/thelaststand.jpeg",
       "showtime":["7:00 pm","4:00am"]
+    },
+    "movie16": {
+      "id": 16,
+      "name": "The Final Countdown",
+      "type":"Action, Sci-Fi",
+      "description": "A group of time travelers tries to change the course of history.",
+      "duration": "2h 30min",
+      "seats": {
+        "total": 150,
+        "available": 100,
+        "reserved": 50,
+      },
+      "image_link":"assets/finalcountdown.jpg",
+      "showtime":["8:00 pm","5:00am"]
+    },
+"movie17": {
+      "id": 17,
+      "name": "The Hidden Truth",
+      "type":"Mystery, Thriller",
+      "description": "A detective uncovers a conspiracy while investigating a high-profile case.",
+      "duration": "2h 20min",
+      "seats": {
+        "total": 120,
+        "available": 80,
+        "reserved": 40,
+      },
+      "image_link":"assets/hiddentruth.jpg",
+      "showtime":["9:00 pm","6:00am"]
+    },
+"movie18": {
+      "id": 18,
+      "name": "The Lost Planet",
+      "type":"Sci-Fi, Adventure",
+      "description": "Astronauts discover a new planet that harbors life.",
+      "duration": "2h 40min",
+      "seats": {
+        "total": 200,
+        "available": 150,
+        "reserved": 50,
+      },
+      "image_link":"assets/lostplanet.jpg",
+      "showtime":["10:00 pm","7:00am"]
+    },
+"movie19": {
+      "id": 19,
+      "name": "The Final Battle",
+      "type":"Action, Drama",
+      "description": "A group of warriors fights against an invading force to save their kingdom.",
+      "duration": "2h 45min",
+      "seats": {
+        "total": 150,
+        "available": 100,
+        "reserved": 50,
+      },
+      "image_link":"assets/finalbattle.jpg",
+      "showtime":["11:00 pm","8:00am"]
+    },
+"movie20": {
+      "id": 20,
+      "name": "The Secret World",
+      "type":"Fantasy, Adventure",
+      "description": "A group of friends discovers a secret world hidden beneath their city.",
+      "duration": "2h 10min",
+      "seats": {
+        "total": 100,
+        "available": 75,
+        "reserved": 25,
+      },
+      "image_link":"assets/secretworld.jpg",
+      "showtime":["12:00 am","9:00am"]
     }
+
   };

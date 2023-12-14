@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
     }
     const checkPass = userInfo.password === passwordValue;
     if (userInfo !== null && checkPass) {
-      location.replace(`dashboard.html?${serialize(userInfo)}`);
+      location.replace(`index.html?${serialize(userInfo)}`);
     } else {
       alert("Email or password does not exist");
       location.replace("login.html");

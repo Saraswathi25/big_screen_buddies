@@ -50,11 +50,13 @@
         justify-content: center;
         flex-grow: 1;
         padding: 20px;
+        background: black;
       }
 
       .payment-options-heading {
         font-size: 1.5em;
         margin-bottom: 20px;
+        color: white;
       }
 
       .accordion {
@@ -71,7 +73,7 @@
       }
 
       .accordion-title {
-        background-color: #4caf50;
+        background-color: #004CCC;
         color: #fff;
         padding: 10px;
         cursor: pointer;
@@ -90,7 +92,7 @@
       }
 
       .accordion-content button {
-        background-color: #4caf50;
+        background-color: #004CCC;
         color: #fff;
         padding: 10px;
         border: none;
@@ -100,15 +102,17 @@
       #qrCodeContainer div{
         margin-bottom: 2%;
       }
+      #paymentContainer{
+        width:40% !important;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Your Header Content Here</h1>
-    </header>
+ 
 
     <main>
       <h2 class="payment-options-heading">Choose a Payment Option</h2>
+      <div id="paymentContainer"></div>
       <script>
         $(document).ready(() => {
           $("body").animate({ opacity: 1 }, 1000);
@@ -383,11 +387,9 @@
         });
       </script>
 
-      <div id="paymentContainer"></div>
+     
     </main>
 
-    <footer>
-      <p>Your Footer Content Here</p>
-    </footer>
+
   </body>
 </html>

@@ -9,6 +9,21 @@
   <link rel="stylesheet" href="movie.css" />
 </head>
 <body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <img src="assets/camera-movie.png" alt="logo">
+        <a href="#">Big Screen Buddies</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="movie_details.html">About</a></li>
+        <li><a href="index.html">Content</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
 <main class="main-seat-selection">
   <i class="fa fa-chevron-left"  id="back" aria-hidden="true"></i>
   <h2 class="movie-seat-heading">Seat Preview</h2>
@@ -20,6 +35,7 @@
   </div>
   <div id="screen"><p>SCREEN</p></div>
   <hr>
+  <div id="total-cost"></div>
   <div class="payment-footer">
     <div class="clockIconTime">
     <i class="fa-solid fa-clock clockIcon"></i>:
@@ -37,11 +53,16 @@
   <i class="fas fa-chair"></i>
 <div id="displayShowTime">Standard</div>
 </div>
-    <button class="showtime_button payment" >BUY TICKETS</button>
+    <button class="showtime_button payment" id="buy">BUY TICKETS</button>
   </div>
 
 </main>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  <script type="text/javascript"
+  src="movie_data.js">
+</script>
   <script src="movies.js"></script>
 </body>
 </html>

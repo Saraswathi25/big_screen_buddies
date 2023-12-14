@@ -7,7 +7,21 @@
   <link rel="stylesheet" href="movie.css" />
 </head>
 <body>
-
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <img src="assets/camera-movie.png" alt="logo">
+        <a href="#">Big Screen Buddies</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="movie_details.html">About</a></li>
+        <li><a href="index.html">Content</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
     <main>
         <div class="heading">
           <div>
@@ -16,7 +30,7 @@
           </div>
           <div class="dateDiv">
             <label for="date" class="date-label">Select Date : </label>
-            <input type="date" id="date" name="date">
+            <input type="date" id="date" name="date" name="date" min="{{ today | date('yyyy-MM-dd') }}">
           </div>
         </div>
         <div id="overlay">
@@ -29,8 +43,13 @@
    <hr>
         <div id="movieDetails"></div>
     </main>
- 
+   
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+ 
+
+  <script type="text/javascript"
+  src="movie_data.js">
+</script>
   <script src="movies.js"></script>
 </body>
 </html>

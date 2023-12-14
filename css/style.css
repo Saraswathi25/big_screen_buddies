@@ -1,0 +1,28 @@
+
+body {
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+
+
+.input-wrapper.error input {
+  border-color: #ff3860;
+}
+
+.input-wrapper .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+}

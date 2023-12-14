@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const carousel = document.querySelector('.carousel');
   const items = carousel.querySelectorAll('.carousel-item');
@@ -73,5 +75,42 @@ document.addEventListener('DOMContentLoaded', function () {
       prevItem();
       stopSlideshow(); // Pause slideshow on button click
   });
+  
+  var moviesContainer = document.getElementById("movies_container");
+  for (const movieKey in movie_data) {
+      if (Object.hasOwnProperty.call(movie_data, movieKey)) {
+        const movie = movie_data[movieKey];
+    
+        const movieCard = document.createElement("div");
+        movieCard.classList.add("movie-card");
+    
+        const image = document.createElement("img");
+        image.src = movie.image_link; // Assuming you have an image_link property in your movie data
+        movieCard.appendChild(image);
+    
+        const movieInfo = document.createElement("div");
+        movieInfo.classList.add("movie-info");
+        movieInfo.innerHTML = `<h2 class="movie_name">${movie.name}</h2>`;
+        // Add other movie details here.
+    
+        movieCard.appendChild(movieInfo);
+        movies_Container.appendChild(movieCard);
+      }
+    }
+
+    $("#logout").click(()=>{
+       // let keepKey =localStorage.getItem("userInfo")
+       clearLocalStorageExceptOne("userInfo");
+        function clearLocalStorageExceptOne(keepKey) {
+            for (var key in localStorage) {
+              if (localStorage.hasOwnProperty(key) && key !== keepKey) {
+                localStorage.removeItem(key);
+              }
+            }
+          }
+   
+    })
+
+  
 });
 

@@ -3,6 +3,7 @@
 $(document).ready(function () {
   var selectedDate;
   var clickedShowtime ;
+  var totalCost ;
   var today = new Date().toISOString().split('T')[0];
   $('#date').attr('min', today);
 
@@ -145,7 +146,7 @@ const urlParamsSeatSelection= new URLSearchParams(window.location.search);
   
     updateSelectedSeats();
   });
-  var totalCost ;
+
   function updateSelectedSeats() {
     totalCost = selectedSeats.length * costPerSeat
     // Update your logic for handling selected seats
@@ -161,9 +162,15 @@ $("#back").click(()=>{
 })
 
 $("#buy").click(()=>{
-  localStorage.setItem("seat",selectedSeats);
-  localStorage.setItem("Cost",totalCost.toFixed(2))
-  window.location.href = "payment.html";
+  if(selectedSeats.length>0){
+    localStorage.setItem("seat",selectedSeats);
+    localStorage.setItem("Cost",totalCost.toFixed(2))
+    window.location.href = "payment.html";
+  }
+  else{
+    $("#overlay").show();
+  }
+ 
 })
 
 $("#logout").click(()=>{

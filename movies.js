@@ -3,19 +3,18 @@
 $(document).ready(function () {
   var selectedDate;
 
-
-
-
   // Get the topic from the URL
 //   const urlParams = new URLSearchParams(window.location.search);
 //   const id = urlParams.get("id"); // "default" or a default topic if none selected
-function getMovieData(movie1) {
+const getMovieData=(movie1)=> {
    
   return movie_data[movie1]
 }
-  const movieData = getMovieData("movie2");
+ 
+const movieData = getMovieData("movie2");
   displayData(movieData);
-
+ 
+  
  function displayShowTimes(showtime){
     let additionalInfoHTML=''
     for (let i = 0; i < showtime.length; i++) {
@@ -80,6 +79,7 @@ const urlParamsSeatSelection= new URLSearchParams(window.location.search);
   var seatsPerRow = 14;
   var gapBetweenSeats = 7;
   var availableSeats = 80;
+  var costPerSeat = 10;
   $("#displayShowTime").text(time);
 
   function getRandomInt(min, max) {
@@ -140,17 +140,23 @@ const urlParamsSeatSelection= new URLSearchParams(window.location.search);
   
     updateSelectedSeats();
   });
-  
+  var totalCost ;
   function updateSelectedSeats() {
+    totalCost = selectedSeats.length * costPerSeat
     // Update your logic for handling selected seats
      $('#selected-seats').text('Selected Seats: ' + selectedSeats.join(', '));
-    console.log('Selected Seats: ', selectedSeats);
+     $('#total-cost').text('Total Cost: $' + totalCost.toFixed(2));
+   
   }
 
 $("#back").click(()=>{
   window.location.href = "movie_details.html";
 })
 
+$("#buy").click(()=>{
+  localStorage.setItem("seat",selectedSeats);
+  localStorage.setItem("Cost",totalCost.toFixed(2))
+  window.location.href = "payment.html";
+})
 
-  
 });

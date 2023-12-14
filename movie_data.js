@@ -76,4 +76,144 @@ var movie_data = {
         image_link:"assets/migration.webp",
         showtime:["9:30 am","6:00pm"]
     },
+    "movie6": {
+      "id": 6,
+      "name": "The Last Frontier",
+      "type":"Adventure, Drama",
+      "description": "A group of explorers ventures into the uncharted wilderness in the 1800s.",
+      "duration": "2h 45min",
+      "seats": {
+        "total": 120,
+        "available": 85,
+        "reserved": 35,
+      },
+      "image_link":"assets/lastfrontier.jpg",
+      "showtime":["10:00 am","7:00pm"]
+    },
+"movie7": {
+      "id": 7,
+      "name": "Silent Waves",
+      "type":"Drama, Romance",
+      "description": "A touching story of two lovers separated by fate but connected by heart.",
+      "duration": "2h 15min",
+      "seats": {
+        "total": 100,
+        "available": 60,
+        "reserved": 40,
+      },
+      "image_link":"assets/silentwaves.jpg",
+      "showtime":["11:30 am","8:00pm"]
+    },
+"movie8": {
+      "id": 8,
+      "name": "Quantum",
+      "type":"Sci-Fi, Thriller",
+      "description": "In a dystopian future, a group of scientists discovers a parallel universe.",
+      "duration": "2h 30min",
+      "seats": {
+        "total": 150,
+        "available": 100,
+        "reserved": 50,
+      },
+      "image_link":"assets/quantum.jpg",
+      "showtime":["12:00 pm","9:00pm"]
+    },
+"movie9": {
+      "id": 9,
+      "name": "Eternal",
+      "type":"Fantasy, Mystery",
+      "description": "A woman is granted immortality but struggles with the eternal loneliness.",
+      "duration": "2h 20min",
+      "seats": {
+        "total": 100,
+        "available": 70,
+        "reserved": 30,
+      },
+      "image_link":"assets/eternal.jpeg",
+      "showtime":["1:00 pm","10:00pm"]
+    },
+"movie10": {
+      "id": 10,
+      "name": "The Lost City",
+      "type":"Action, Adventure",
+      "description": "An archaeologist and a group of treasure hunters search for a lost city in the Amazon rainforest.",
+      "duration": "2h 40min",
+      "seats": {
+        "total": 200,
+        "available": 150,
+        "reserved": 50,
+      },
+      "image_link":"assets/lostcity.jpeg",
+      "showtime":["2:00 pm","11:00pm"]
+    },
+"movie11": {
+      "id": 11,
+      "name": "Beyond the Stars",
+      "type":"Sci-Fi, Adventure",
+      "description": "A young astronaut embarks on a journey to find life beyond Earth.",
+      "duration": "2h 50min",
+      "seats": {
+        "total": 120,
+        "available": 80,
+        "reserved": 40,
+      },
+      "image_link":"assets/beyondstars.jpeg",
+      "showtime":["3:00 pm","12:00am"]
+    },
+"movie12": {
+      "id": 12,
+      "name": "The Forgotten Kingdom",
+      "type":"Fantasy, Adventure",
+      "description": "A young prince embarks on a quest to reclaim his kingdom from dark forces.",
+      "duration": "2h 35min",
+      "seats": {
+        "total": 100,
+        "available": 65,
+        "reserved": 35,
+      },
+      "image_link":"assets/theforgottenkingdom.jpeg",
+      "showtime":["4:00 pm","1:00am"]
+    },
+"movie13": {
+      "id": 13,
+      "name": "The Final Hour",
+      "type":"Thriller, Drama",
+      "description": "A detective races against time to save a city from a mysterious killer.",
+      "duration": "2h 25min",
+      "seats": {
+        "total": 150,
+        "available": 100,
+        "reserved": 50,
+      },
+      "image_link":"assets/thefinalhour.jpg",
+      "showtime":["5:00 pm","2:00am"]
+    },
+"movie14": {
+      "id": 14,
+      "name": "The Hidden World",
+      "type":"Animation, Adventure",
+      "description": "A group of animals embarks on a journey to find a hidden world.",
+      "duration": "2h 10min",
+      "seats": {
+        "total": 100,
+        "available": 75,
+        "reserved": 25,
+      },
+      "image_link":"assets/thehiddenworld.jpeg",
+      "showtime":["6:00 pm","3:00am"]
+    },
+"movie15": {
+      "id": 15,
+      "name": "The Last Stand",
+      "type":"Action, Drama",
+      "description": "A group of soldiers makes a stand against an invading alien force.",
+      "duration": "2h 45min",
+      "seats": {
+        "total": 200,
+        "available": 150,
+        "reserved": 50,
+      },
+      "image_link":"assets/thelaststand.jpeg",
+      "showtime":["7:00 pm","4:00am"]
+    }
   };

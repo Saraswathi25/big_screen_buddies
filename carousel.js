@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         const movieCard = document.createElement("div");
         movieCard.classList.add("movie-card");
-    
+        movieCard.id=movieKey;
         const image = document.createElement("img");
         image.src = movie.image_link; // Assuming you have an image_link property in your movie data
         movieCard.appendChild(image);
@@ -97,7 +97,20 @@ document.addEventListener('DOMContentLoaded', function () {
         movies_Container.appendChild(movieCard);
       }
     }
+    var movieCards = document.querySelectorAll(".movie-card");
 
+    // Add click event listener to each movie card
+    movieCards.forEach(function(movieCard) {
+      movieCard.addEventListener("click", function() {
+        // Get the id of the clicked movie card
+        var clickedMovieId = movieCard.id;
+        
+        // Do something with the id, e.g., log it to the console
+      localStorage.setItem("movieId",clickedMovieId)
+        window.location.href = "movie_details.html?clickedMovieId=" + clickedMovieId;
+        
+      });
+    });
     $("#logout").click(()=>{
        // let keepKey =localStorage.getItem("userInfo")
        clearLocalStorageExceptOne("userInfo");

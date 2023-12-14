@@ -30,7 +30,7 @@
           </div>
           <div class="dateDiv">
             <label for="date" class="date-label">Select Date : </label>
-            <input type="date" id="date" name="date">
+            <input type="date" id="date" name="date" name="date" min="{{ today | date('yyyy-MM-dd') }}">
           </div>
         </div>
         <div id="overlay">

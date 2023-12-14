@@ -50,11 +50,13 @@
         justify-content: center;
         flex-grow: 1;
         padding: 20px;
+        background: black;
       }
 
       .payment-options-heading {
         font-size: 1.5em;
         margin-bottom: 20px;
+        color: white;
       }
 
       .accordion {
@@ -71,7 +73,7 @@
       }
 
       .accordion-title {
-        background-color: #4caf50;
+        background-color: #004CCC;
         color: #fff;
         padding: 10px;
         cursor: pointer;
@@ -90,7 +92,7 @@
       }
 
       .accordion-content button {
-        background-color: #4caf50;
+        background-color: #004CCC;
         color: #fff;
         padding: 10px;
         border: none;
@@ -100,21 +102,24 @@
       #qrCodeContainer div{
         margin-bottom: 2%;
       }
+      #paymentContainer{
+        width:40% !important;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Your Header Content Here</h1>
-    </header>
+ 
 
     <main>
       <h2 class="payment-options-heading">Choose a Payment Option</h2>
+      <div id="paymentContainer"></div>
       <script>
         $(document).ready(() => {
           $("body").animate({ opacity: 1 }, 1000);
         });
         let seatNumber = localStorage.getItem("seat");
         let Cost = localStorage.getItem("Cost");
+        let showTime=localStorage.getItem("time");
         let createAccordion = () => {
           let accordion = document.createElement("div");
           accordion.classList.add("accordion");
@@ -343,8 +348,10 @@
                                     </button>
                                 </div>
                                 <div class="modal-body" id="qrCodeContainer">
+                                    <div id="showTime"></div>
                                     <div id="paymentValue"></div>
                                 <div id="seat-number"></div>
+
                                     </div>
                                
                                 <div class="modal-footer">
@@ -370,9 +377,9 @@
               window.location.href = "index.html";
               $("#qrCodeModal").modal("hide");
           });
-
           $("#paymentValue").text("Cost:" + Cost);
-          $("#seat-number").text("Seat-Number:" + seatNumber);
+          $("#seat-number").text("Seat-Number:" + seatNumber);         
+          $("#showTime").text("Show Time:" + showTime);
           $("#qrCodeModal").on("hidden.bs.modal", function () {
             $(this).remove();
           });
@@ -383,11 +390,9 @@
         });
       </script>
 
-      <div id="paymentContainer"></div>
+     
     </main>
 
-    <footer>
-      <p>Your Footer Content Here</p>
-    </footer>
+
   </body>
 </html>

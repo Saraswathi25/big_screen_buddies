@@ -2,6 +2,9 @@
 
 $(document).ready(function () {
   var selectedDate;
+  var clickedShowtime ;
+  var today = new Date().toISOString().split('T')[0];
+  $('#date').attr('min', today);
 
   // Get the topic from the URL
 //   const urlParams = new URLSearchParams(window.location.search);
@@ -52,19 +55,21 @@ $(".close-overlay").click(() => {
 $('#date').on('change', function() {
   // Retrieve the value of the date input
   selectedDate = $(this).val();
+  selectedDate = selectedDate.toISOString().split('T')[0];
 });
 $("#movieDetails").on("click", ".showtime_button", function() {
   // Get the value of the clicked showtime
-  // let isloggedIn = localStorage.getItem("isloggedIn");
+   let isLoggedIn = localStorage.getItem("isLoggedIn");
+   clickedShowtime = $(this).text();
+   
   if(selectedDate){
-  // if(isloggedIn)
-  // {
-    let clickedShowtime = $(this).text();
+  if(isLoggedIn == "true")
+   {
+   
     window.location.href = "seat_selection.html?time=" + clickedShowtime;
-//   }
-// else{
-//   window.location.href = "login.html";
-// }
+  } else{
+   window.location.href = "login.html?time=" + clickedShowtime;
+}
   }
 else{
   $("#overlay").show();
@@ -150,12 +155,16 @@ const urlParamsSeatSelection= new URLSearchParams(window.location.search);
   }
 
 $("#back").click(()=>{
+ // selectedDate = selectedDate.toISOString().split('T')[0];
+  $("#date").text(selectedDate)
   window.location.href = "movie_details.html";
 })
 
 $("#buy").click(()=>{
   localStorage.setItem("seat",selectedSeats);
   localStorage.setItem("Cost",totalCost.toFixed(2))
+  localStorage.setItem("time",clickedShowtime)
+  localStorage.setItem("date",selectedDate)
   window.location.href = "payment.html";
 })
 

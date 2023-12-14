@@ -95,5 +95,9 @@ document.addEventListener('DOMContentLoaded', function () {
         movies_Container.appendChild(movieCard);
       }
     }
+
+    $("#logout").click(()=>{
+        localStorage.clear();
+    })
 });
 

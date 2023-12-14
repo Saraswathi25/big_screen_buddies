@@ -119,6 +119,7 @@
         });
         let seatNumber = localStorage.getItem("seat");
         let Cost = localStorage.getItem("Cost");
+        let showTime=localStorage.getItem("time");
         let createAccordion = () => {
           let accordion = document.createElement("div");
           accordion.classList.add("accordion");
@@ -347,8 +348,10 @@
                                     </button>
                                 </div>
                                 <div class="modal-body" id="qrCodeContainer">
+                                    <div id="showTime"></div>
                                     <div id="paymentValue"></div>
                                 <div id="seat-number"></div>
+
                                     </div>
                                
                                 <div class="modal-footer">
@@ -374,9 +377,9 @@
               window.location.href = "index.html";
               $("#qrCodeModal").modal("hide");
           });
-
           $("#paymentValue").text("Cost:" + Cost);
-          $("#seat-number").text("Seat-Number:" + seatNumber);
+          $("#seat-number").text("Seat-Number:" + seatNumber);         
+          $("#showTime").text("Show Time:" + showTime);
           $("#qrCodeModal").on("hidden.bs.modal", function () {
             $(this).remove();
           });

@@ -274,12 +274,18 @@ nav .menu-nac {
 .logo {
   display: flex;
   align-items: center;
+  padding-left: 25px;
+  flex:1;
+}
+.logo img{
+  padding-left: 25px;
 }
 .menu .logo a {
   text-decoration: none;
   color: #ffffff;
   font-size: 35px;
   font-weight: 600;
+  padding-left: 25px;
 }
 .menu ul {
   display: inline-flex;
@@ -369,11 +375,12 @@ nav .menu-nac {
 .menu {
   position: relative;
   display: flex;
-  justify-content: center;
+ 
   align-items: center;
   margin: 10px 0;
   flex-wrap: wrap;
 }
+
 
 .social-icon__item,
 .menu__item {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment Page</title>
-
+  
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -15,6 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <link rel="stylesheet" href="movie.css">
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -108,7 +109,21 @@
     </style>
   </head>
   <body>
- 
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <img src="assets/camera-movie.png" alt="logo">
+          <a href="#">Big Screen Buddies</a>
+        </div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="movie_details.html">About</a></li>
+          <li><a href="index.html">Content</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <main>
       <h2 class="payment-options-heading">Choose a Payment Option</h2>
@@ -194,9 +209,9 @@
           let contentDiv = document.createElement("div");
           contentDiv.id = contentId;
           contentDiv.classList.add("accordion-content");
-
-          contentDiv.innerHTML += "<p>Email: screenbuddies@gmail.com</p>";
-          contentDiv.innerHTML += "<p>Mobile Number: +1 123-456-7890</p>";
+          let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+          contentDiv.innerHTML +='<h6> Email : ' +userInfo.email+ '</h6>'
+          contentDiv.innerHTML +='<h6>Ph.no : ' + userInfo.phoneNumber+ '</h6>';
 
           contentDiv.appendChild(
             createFormField("Reference ID (10 digits)", "text", "referenceId")
@@ -343,9 +358,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Download Tickets</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                 
                                 </div>
                                 <div class="modal-body" id="qrCodeContainer">
                                     <div id="showTime"></div>
@@ -355,7 +368,7 @@
                                     </div>
                                
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                 
                                     <a href="#" id="redirectButton" class="btn btn-primary">Go to Home Page</a>
                                 </div>
                             </div>
@@ -374,6 +387,14 @@
 
           $("#qrCodeModal").modal("show");
           $("#redirectButton").on("click", function (){
+            clearLocalStorageExceptOne("userInfo");
+        function clearLocalStorageExceptOne(keepKey) {
+            for (var key in localStorage) {
+              if (localStorage.hasOwnProperty(key) && key !== keepKey) {
+                localStorage.removeItem(key);
+              }
+            }
+          }
               window.location.href = "index.html";
               $("#qrCodeModal").modal("hide");
           });

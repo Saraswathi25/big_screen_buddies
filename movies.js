@@ -38,7 +38,6 @@ const movieData = getMovieData("movie2");
             <h2>${movieData.name}</h2>
             <p>${movieData.type}</p>
             <p>Showtime: ${movieData.duration}</p>
-            <p>Seats Available: ${movieData.seats.available}/${movieData.seats.total}</p>
            <div id="showTimeDiv"> ${displayShowTimes(movieData.showtime)}</div>
     </div>
     </div>
@@ -61,7 +60,8 @@ $("#movieDetails").on("click", ".showtime_button", function() {
   // Get the value of the clicked showtime
    let isLoggedIn = localStorage.getItem("isLoggedIn");
    clickedShowtime = $(this).text();
-   
+   localStorage.setItem("time",clickedShowtime)
+   localStorage.setItem("date",selectedDate)
   if(selectedDate){
   if(isLoggedIn == "true")
    {
@@ -155,17 +155,35 @@ const urlParamsSeatSelection= new URLSearchParams(window.location.search);
   }
 
 $("#back").click(()=>{
- // selectedDate = selectedDate.toISOString().split('T')[0];
-  $("#date").text(selectedDate)
+  let date = localStorage.getItem('date');
+  //$("#date").text(date)
   window.location.href = "movie_details.html";
 })
 
 $("#buy").click(()=>{
   localStorage.setItem("seat",selectedSeats);
   localStorage.setItem("Cost",totalCost.toFixed(2))
-  localStorage.setItem("time",clickedShowtime)
-  localStorage.setItem("date",selectedDate)
   window.location.href = "payment.html";
+})
+
+$("#logout").click(()=>{
+  let path = window.location.pathname;
+  let page = path.split("/").pop();
+if(page=="seat_selection.html"|| page=="payment.html"){
+  window.location.href = "index.html";
+}
+else{
+  clearLocalStorageExceptOne("userInfo");
+  function clearLocalStorageExceptOne(keepKey) {
+      for (var key in localStorage) {
+        if (localStorage.hasOwnProperty(key) && key !== keepKey) {
+          localStorage.removeItem(key);
+        }
+      }
+    }
+}
+ 
+
 })
 
 });

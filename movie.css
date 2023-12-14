@@ -323,12 +323,6 @@ nav .menu-nac {
   transition: opacity 0.5s ease-in-out; 
 }
 
-.carousel-item.block {
-  display: block;
-}
-.carousel-item.none {
-  display: none;
-}
 .carousel img{
 
   width: 100%;

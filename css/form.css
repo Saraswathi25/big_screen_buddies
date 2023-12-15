@@ -68,7 +68,9 @@ form .input-wrapper input:focus {
   border-bottom: 1px solid yellow;
   color: white;
 }
-
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 form .input-wrapper input:placeholder-shown + label {
   bottom: 1rem;
   /* right: 0rem; */

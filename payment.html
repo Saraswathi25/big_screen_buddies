@@ -112,7 +112,7 @@
     <nav>
       <div class="menu">
         <div class="logo">
-          <img src="assets/camera-movie.png" alt="logo">
+          <img src="assets/logo.jpg" alt="logo" style="width:5%">
           <a href="#">Big Screen Buddies</a>
         </div>
         <ul>
@@ -123,7 +123,6 @@
         </ul>
       </div>
     </nav>
-
     <main>
       <h2 class="payment-options-heading">Choose a Payment Option</h2>
       <div id="paymentContainer"></div>
@@ -356,7 +355,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Download Tickets</h5>
+                                    <h5 class="modal-title">Payment Successful</h5>
                                  
                                 </div>
                                 <div class="modal-body" id="qrCodeContainer">
@@ -402,6 +401,7 @@
           $("#paymentValue").text("Cost:" + Cost);
           $("#seat-number").text("Seat-Number:" + seatNumber);         
           $("#showTime").text("Show Time:" + showTime);
+          
           $("#qrCodeModal").on("hidden.bs.modal", function () {
             $(this).remove();
           });

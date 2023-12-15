@@ -1,7 +1,4 @@
-*{
-  font-family: MarkOT, sans-serif, sans-serif;
- 
-}
+
 body{
   background-color: #000000;
 }
@@ -231,7 +228,9 @@ margin: 2px;
 .date-label{
   color: white;
 }
-
+.menu{
+  margin-right: 20px;
+}
 #movies_Container {
   display: flex;
   flex-wrap: wrap;
@@ -262,7 +261,7 @@ margin: 2px;
 
 nav {
 
-  background: #000000;
+  background: #001121;
   width: 100%;
   padding: 10px 0;
   z-index: 12;
@@ -298,6 +297,7 @@ nav .menu-nac {
 
 .menu ul {
   display: inline-flex;
+  padding-right: 5%;
 }
 .menu ul li {
   list-style: none;

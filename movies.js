@@ -15,7 +15,7 @@ const getMovieData=(id)=> {
    
   return movie_data[id]
 }
- 
+
 const movieData = getMovieData(id);
   displayData(movieData);
  

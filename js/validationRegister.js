@@ -35,7 +35,16 @@ const isValidEmail = (email) => {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 };
-
+function isValidUsername(username) {
+  // Regular expression to allow only alphabetical characters
+  var usernameRegex = /^[a-zA-Z]+$/;
+  return usernameRegex.test(username);
+}
+function isValidPhoneNumber(phoneNumber) {
+  // Regular expression for a simple phone number format (e.g., 123-456-7890)
+  var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+  return phoneRegex.test(phoneNumber);
+}
 const validateInputs = () => {
   const firstNameValue = firstNameEL.value.trim();
   const lastNameValue = lastNameEL.value.trim();
@@ -46,7 +55,9 @@ const validateInputs = () => {
 
   if (usernameValue === "") {
     setError(usernameEL, "Username must be provided");
-  } else {
+  
+  } 
+ else {
     setSuccess(usernameEL);
   }
 
@@ -68,17 +79,24 @@ const validateInputs = () => {
 
   if (firstNameValue === "") {
     setError(firstNameEL, "First name must be provided");
-  } else {
+  } 
+  if (!isValidUsername(firstNameValue)) {
+    setError(firstNameEL,  "First name should have only alphabets.");
+}else {
     setSuccess(firstNameEL);
   }
   if (lastNameValue === "") {
     setError(lastNameEL, "Last name must be provided");
-  } else {
+  }
+  if (!isValidUsername(lastNameValue)) {
+    setError(lastNameEL,  "Last name should have only alphabets.");
+} else {
     setSuccess(lastNameEL);
   }
   if (phoneNumberValue === "") {
     setError(phoneNumberEL, "Phone number must be provided");
-  } else {
+  }
+else {
     setSuccess(phoneNumberEL);
   }
 };

@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+ 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 0;
+  }
+  .modal-body {
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header,
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    flex-grow: 1;
+    padding: 20px;
+    background: black;
+  }
+
+  .payment-options-heading {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .accordion {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .accordion-section {
+    background-color: #fff;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .accordion-title {
+    background-color: #004CCC;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .accordion-content {
+    padding: 10px;
+    display: none;
+  }
+
+  .accordion-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+
+  .accordion-content button {
+    background-color: #004CCC;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #qrCodeContainer div{
+    margin-bottom: 2%;
+  }
+  #paymentContainer{
+    width:40% !important;
+  }

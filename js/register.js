@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) => {
     let username = usernameEL.value;
     let password = passwordEL.value;
     let email = emailEL.value;
-    let phoneNumber = phoneNumberEL.value;
+    
 
     const userInformation = {
       firstName,
@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
       username,
       password,
       email,
-      phoneNumber,
+      
     };
 
     window.localStorage.setItem("userInfo", JSON.stringify(userInformation));

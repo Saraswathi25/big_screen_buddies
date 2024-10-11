@@ -80,7 +80,7 @@ $(document).ready(() => {
     contentDiv.classList.add("accordion-content");
     let userInfo = JSON.parse(localStorage.getItem("userInfo"));
     contentDiv.innerHTML +='<h6> Email : ' +userInfo.email+ '</h6>'
-    contentDiv.innerHTML +='<h6>Ph.no : ' + userInfo.phoneNumber+ '</h6>';
+    
 
     contentDiv.appendChild(
       createFormField("Reference ID (10 digits)", "text", "referenceId")

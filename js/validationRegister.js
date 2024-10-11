@@ -4,7 +4,7 @@ const lastNameEL = document.getElementById("lastName");
 const usernameEL = document.getElementById("username");
 const passwordEL = document.getElementById("password");
 const emailEL = document.getElementById("email");
-const phoneNumberEL = document.getElementById("phoneNumber");
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -40,18 +40,14 @@ function isValidUsername(username) {
   var usernameRegex = /^[a-zA-Z]+$/;
   return usernameRegex.test(username);
 }
-function isValidPhoneNumber(phoneNumber) {
-  // Regular expression for a simple phone number format (e.g., 123-456-7890)
-  var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
-  return phoneRegex.test(phoneNumber);
-}
+
 const validateInputs = () => {
   const firstNameValue = firstNameEL.value.trim();
   const lastNameValue = lastNameEL.value.trim();
   const usernameValue = usernameEL.value.trim();
   const passwordValue = passwordEL.value.trim();
   const emailValue = emailEL.value.trim();
-  const phoneNumberValue = phoneNumberEL.value.trim();
+  
 
   if (usernameValue === "") {
     setError(usernameEL, "Username must be provided");
@@ -93,10 +89,5 @@ const validateInputs = () => {
 } else {
     setSuccess(lastNameEL);
   }
-  if (phoneNumberValue === "") {
-    setError(phoneNumberEL, "Phone number must be provided");
-  }
-else {
-    setSuccess(phoneNumberEL);
-  }
+ 
 };
